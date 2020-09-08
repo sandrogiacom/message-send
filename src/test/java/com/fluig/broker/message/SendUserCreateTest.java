@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Disabled
-class SendUserCreateTests {
+class SendUserCreateTest {
 
     @Autowired
     private BrokerPublisher publisher;
@@ -22,7 +22,7 @@ class SendUserCreateTests {
     void sendCreateUserMessage() {
         SyncEventDTO sync = new SyncEventDTO();
         sync.setType("USER_CREATE");
-        sync.setActiveDirectoryId("7da8a2bf001e4abeb");
+        sync.setActiveDirectoryId("7da8a2bf001e4abebab4d4a5fdd9cb09");
         sync.setMessage(toJson(buildUserCreate()));
 
         publisher.send(BrokerRequest.Builder.of()
