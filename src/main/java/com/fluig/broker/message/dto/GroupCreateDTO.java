@@ -19,9 +19,9 @@ public class GroupCreateDTO {
 
     private Long lastAdChangeMillis;
 
-    private GroupType groupType;
+    private GroupType adGroupType;
 
-    private GroupScope groupScope;
+    private GroupScope adGroupScope;
 
     public String getObjectGuid() {
         return objectGuid;
@@ -79,19 +79,19 @@ public class GroupCreateDTO {
         this.lastAdChangeMillis = lastAdChangeMillis;
     }
 
-    public GroupType getGroupType() {
-        return groupType;
+    public GroupType getAdGroupType() {
+        return adGroupType;
     }
 
-    public void setGroupType(GroupType groupType) {
-        this.groupType = groupType;
+    public void setAdGroupType(GroupType adGroupType) {
+        this.adGroupType = adGroupType;
     }
 
-    public GroupScope getGroupScope() {
-        return groupScope;
+    public GroupScope getAdGroupScope() {
+        return adGroupScope;
     }
 
-    public void setGroupScope(GroupScope groupScope) {
-        this.groupScope = groupScope;
+    public void setAdGroupScope(GroupScope adGroupScope) {
+        this.adGroupScope = adGroupScope;
     }
 }
