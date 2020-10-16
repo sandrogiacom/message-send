@@ -29,13 +29,10 @@ class SendGroupCreateTest {
             SyncEventDTO sync = new SyncEventDTO();
             sync.setType("GROUP_CREATE");
             sync.setActiveDirectoryId(ACTIVE_DIRECTORY_ID);
-            sync.setMessage(toJson(buildGroupCreate()));
+            sync.setMessage(toJson(buildGroupCreate(i)));
 
             publisher.send(BrokerRequest.Builder.of()
                     .originClientId("clientId") //ID id?
-                    //.tenantId("001") //companyId
-                    //.user("currentUserId") //
-                    //.tokenClientId("0ad5c746-3321-4257-806d-905ba00a0469") //smart_sync_token
                     .transactionId("9cb1798303ecf3a7")
                     .exchangeName(BrokerConstants.IDM_AD_SYNC_TOPIC)
                     .routingKey(BrokerConstants.IDM_AD_SYNC_QUEUE_SYNC)
@@ -43,21 +40,21 @@ class SendGroupCreateTest {
 
             System.out.println("send message " + i);
 
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }
 
     }
 
-    private GroupCreateDTO buildGroupCreate() {
+    private GroupCreateDTO buildGroupCreate(int i) {
         GroupCreateDTO group = new GroupCreateDTO();
-        group.setName("Group name");
-        group.setSamAccountName("Group SamAccountName");
-        group.setDescription("Group description");
-        group.setDisplayName("Group displayName");
-        group.setDistinguishedName("Group DistinguishedName");
+        group.setName("Group name " + i);
+        group.setSamAccountName("Group SamAccountName " + i);
+        group.setDescription("Group description " + i);
+        group.setDisplayName("Group displayName " + i);
+        group.setDistinguishedName("Group DistinguishedName " + i);
         group.setObjectGuid(UUID.randomUUID().toString().replace("-", ""));
-        group.setGroupScope(GroupScope.GLOBAL);
-        group.setGroupType(GroupType.DISTRIBUTION);
+        group.setAdGroupScope(GroupScope.GLOBAL);
+        group.setAdGroupType(GroupType.DISTRIBUTION);
         group.setLastAdChangeMillis(new Date().getTime());
         return group;
     }

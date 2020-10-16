@@ -22,7 +22,7 @@ class SendUserCreateTest {
 
     @Test
     void sendCreateUserMessage() throws InterruptedException {
-        for (int i = 1; i <= 50; i++) {
+        for (int i = 1; i <= 10; i++) {
             SyncEventDTO sync = new SyncEventDTO();
             sync.setType("USER_CREATE");
             sync.setActiveDirectoryId(ACTIVE_DIRECTORY_ID);
