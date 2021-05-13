@@ -1,5 +1,5 @@
 package com.fluig.broker.message;
 
 public interface AdConstants {
-    String ACTIVE_DIRECTORY_ID = "5c11b84a4e9b467d84356761448a997e";
+    String ACTIVE_DIRECTORY_ID = "d1cbe067c9b54611a736ad13d1f79d87";
 }
